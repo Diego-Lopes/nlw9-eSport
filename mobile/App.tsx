@@ -1,24 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from 'react-native';
+import { Background } from './src/components/Background';
+import { useFonts, Inter_400Regular, Inter_600SemiBold, Inter_700Bold, Inter_900Black } from '@expo-google-fonts/inter'
+
+import { Home } from './src/screens/Home';
+import { Loading } from './src/components/Loading';
+
 
 export default function App() {
+  const [fontsLoad] = useFonts({ Inter_400Regular, Inter_600SemiBold, Inter_700Bold, Inter_900Black });
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Hello Word</Text>
-      <StatusBar style="auto" backgroundColor="white" />
-    </View>
+    <Background>
+      <StatusBar
+        barStyle="light-content" //tipo de estilo barStyle
+        backgroundColor="transparent" //definindo transparencia
+        translucent //deixa o background transparente.
+      />
+      {fontsLoad ? <Home /> : <Loading />}
+    </Background>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#182138',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  title: {
-    color: '#FFFFFF',
-  }
-});
