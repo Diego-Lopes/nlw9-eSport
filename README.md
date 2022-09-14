@@ -1,4 +1,4 @@
 # Project NLW E-Sport
 
 
-![photoMain](https://github.com/Diego-Lopes/nlw9-eSport/blob/main/assets/capa.webp)
+![photoMain](https://raw.githubusercontent.com/Diego-Lopes/nlw9-eSport/main/assets/capa.webp)
