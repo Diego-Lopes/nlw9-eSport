@@ -17,6 +17,11 @@ interface Props extends TouchableOpacityProps {
 }
 
 export function GameCard({ data, ...rest }: Props) {
+
+  console.log(data);
+
+
+
   return (
     <TouchableOpacity style={styles.container} {...rest}>
 
@@ -33,7 +38,7 @@ export function GameCard({ data, ...rest }: Props) {
             {data.title}
           </Text>
           <Text style={styles.ads}>
-            {data._count.ads}
+            {data._count.ads > 0 ? `${data._count.ads} anúcio(s)` : `${data._count.ads} anúcio`}
           </Text>
 
         </LinearGradient>
