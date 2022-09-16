@@ -7,7 +7,7 @@ import logoImg from '../../assets/logo-nlw-esports.png';
 import { styles } from './styles';
 import { GameParams } from '../../@types/navigation';
 import React, { useEffect, useState } from 'react';
-import { TouchableOpacity, View, Image, FlatList } from 'react-native';
+import { TouchableOpacity, View, Image, FlatList, Text } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { THEME } from '../../theme';
 import { Heading } from '../../components/Heading';
@@ -69,9 +69,13 @@ export function Game() {
           )}
           horizontal
           style={styles.containerList}
-          contentContainerStyle={styles.contentList}
+          contentContainerStyle={[duos.length > 0 ? styles.contentList : styles.emptyListContent]}
           showsHorizontalScrollIndicator={false}
-
+          ListEmptyComponent={() => (
+            <Text style={styles.titleAlert}>
+              Não há anúncios publicados para esse jogo.
+            </Text>
+          )}
         />
       </SafeAreaView>
     </Background>
