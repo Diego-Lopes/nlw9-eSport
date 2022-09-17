@@ -22,6 +22,7 @@
 
 - [x] Put push notification in the APP
 
+---
 #### Project Serve 📱
 
 - [ ] Get push notification from APP put on backend
